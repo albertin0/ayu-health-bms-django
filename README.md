@@ -1,0 +1,1 @@
+# ayu-health-bms-django
