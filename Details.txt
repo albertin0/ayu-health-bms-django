@@ -1,0 +1,46 @@
+APIs,
+
+GET: /view/movie?id=1
+response ->
+cinemas:  [{
+    name:""
+    time1:
+    time2:
+    time3:
+},..]
+
+
+POST: /add/movie
+{
+    "name":"",
+    "cinema":{
+        "name":"",
+        "time":[]
+    }
+}
+
+GET: /view/seats?cinema_id=""&datetime=""
+response ->
+seats:  {
+    A:{
+        1:booked,
+        2:empty,...
+    },
+    B:{},..
+}
+
+
+POST: /save/layout/:cinema_id
+{
+    row:[A,B,C,D,...],
+    cols:[1,2,3,...]
+}
+
+Schemas,
+
+movie(id,name,details)
+cinema(id,cinema_name,layout_id)
+time_slot(id,movie_id,cinema_id,start_datetime,end_datetime)
+inventory(id,time_id,price)
+layout(id,rows,cols)
+booking(id,time_id,user_id,status)
